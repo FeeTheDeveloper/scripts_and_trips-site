@@ -1,0 +1,53 @@
+/*
+ * tokens.css — CSS custom-property layer for the Scripts & Trips brand.
+ *
+ * Import this file in your global stylesheet or Next.js layout:
+ *
+ *   @import "@/lib/brand/tokens.css";
+ *
+ * All values are kept in sync with palette.ts and gradients.ts.
+ *
+ * ─── Tailwind integration ───────────────────────────────────────────
+ * Reference these variables in tailwind.config.ts via `var(…)`:
+ *
+ *   colors: {
+ *     brand:   "var(--brand-primary)",
+ *     "brand-secondary": "var(--brand-secondary)",
+ *     accent:  "var(--brand-accent)",
+ *     ink:     "var(--ink)",
+ *     paper:   "var(--paper)",
+ *     muted:   "var(--muted)",
+ *   },
+ *   backgroundImage: {
+ *     "gradient-hero":   "var(--gradient-hero)",
+ *     "gradient-card":   "var(--gradient-card-glow)",
+ *     "gradient-button": "var(--gradient-button)",
+ *     "gradient-mesh":   "var(--gradient-mesh)",
+ *   },
+ * ────────────────────────────────────────────────────────────────────
+ */
+
+:root {
+  /* ── Palette ─────────────────────────────────────────────────────── */
+  --brand-primary:   #6B2FA0;
+  --brand-secondary: #4A1D7A;
+  --brand-accent:    #FFB400;
+  --ink:             #1A1A1A;
+  --paper:           #F6F4F1;
+  --muted:           #8B8B8B;
+
+  /* ── Gradients ───────────────────────────────────────────────────── */
+  --gradient-hero:
+    linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 50%, #2E1052 100%);
+
+  --gradient-card-glow:
+    radial-gradient(ellipse at 30% 0%, #FFB40022 0%, #6B2FA011 50%, transparent 80%);
+
+  --gradient-button:
+    linear-gradient(90deg, var(--brand-primary) 0%, #8B3FD9 60%, var(--brand-accent) 100%);
+
+  --gradient-mesh:
+    radial-gradient(ellipse at 20% 80%, #4A1D7A33 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, #6B2FA022 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, #2E105218 0%, transparent 70%);
+}

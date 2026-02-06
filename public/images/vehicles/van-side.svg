@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" fill="none">
+  <!--
+    van-side.svg — Side-profile cargo van
+    Uses currentColor for purple accents; set color on the parent element
+    or override via CSS: svg { color: var(--brand-primary, #6B2FA0); }
+  -->
+
+  <!-- Shadow -->
+  <ellipse cx="240" cy="198" rx="200" ry="10" fill="currentColor" opacity=".08"/>
+
+  <!-- Body -->
+  <rect x="40" y="72" width="320" height="108" rx="10" fill="#F4F2F8" stroke="currentColor" stroke-width="2.5"/>
+
+  <!-- Cargo area accent stripe -->
+  <rect x="40" y="140" width="320" height="4" rx="2" fill="currentColor" opacity=".6"/>
+
+  <!-- Cab windshield -->
+  <path d="M310 72 L370 72 Q382 72 388 82 L410 130 Q412 136 406 138 L360 138 L360 72 Z"
+        fill="currentColor" opacity=".18"/>
+  <path d="M365 78 L390 78 Q396 78 400 86 L414 126 Q416 130 412 132 L365 132 Z"
+        fill="#DDDAF0" stroke="currentColor" stroke-width="1.5"/>
+
+  <!-- Cab roof line -->
+  <path d="M360 72 L400 72 Q424 72 432 96 L440 130"
+        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Bumper -->
+  <rect x="420" y="150" width="28" height="18" rx="4" fill="currentColor" opacity=".22"/>
+
+  <!-- Headlight -->
+  <rect x="432" y="118" width="14" height="10" rx="3" fill="#FFB400" opacity=".9"/>
+
+  <!-- Door lines -->
+  <line x1="200" y1="78" x2="200" y2="174" stroke="currentColor" stroke-width="1.2" opacity=".25"/>
+  <line x1="140" y1="78" x2="140" y2="174" stroke="currentColor" stroke-width="1.2" opacity=".25"/>
+
+  <!-- Wheels -->
+  <circle cx="120" cy="186" r="24" fill="#2E1052"/>
+  <circle cx="120" cy="186" r="14" fill="#4A1D7A"/>
+  <circle cx="120" cy="186" r="6"  fill="#DDDAF0"/>
+
+  <circle cx="380" cy="186" r="24" fill="#2E1052"/>
+  <circle cx="380" cy="186" r="14" fill="#4A1D7A"/>
+  <circle cx="380" cy="186" r="6"  fill="#DDDAF0"/>
+
+  <!-- Speed lines -->
+  <line x1="4" y1="100" x2="30" y2="100" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+  <line x1="10" y1="120" x2="34" y2="120" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".25"/>
+  <line x1="6" y1="140" x2="28" y2="140" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".3"/>
+  <line x1="14" y1="160" x2="32" y2="160" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".2"/>
+</svg>
