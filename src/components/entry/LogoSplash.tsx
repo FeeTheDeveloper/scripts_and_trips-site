@@ -15,7 +15,7 @@ import Image from "next/image";
 /*  overlay) so crawlers see the full page content.                            */
 /* -------------------------------------------------------------------------- */
 
-const SPLASH_HOLD_MS = 2800; // time the logo stays visible before exit anim
+const SPLASH_HOLD_MS = 2200; // time the logo stays visible before exit anim
 
 /* ── Cinematic easings ───────────────────────────────────────────────────── */
 type Ease4 = [number, number, number, number];
@@ -26,7 +26,7 @@ const easeCine: Ease4 = [0.76, 0, 0.24, 1];
 /* ── Props ───────────────────────────────────────────────────────────────── */
 
 interface LogoSplashProps {
-  /** Path to the logo asset (default: 512 px brand logo) */
+  /** Public-relative path to the logo asset */
   logoSrc?: string;
   /** Enable sound hook placeholder (default false) */
   enableSound?: boolean;
@@ -38,7 +38,7 @@ interface LogoSplashProps {
 /* ── Component ───────────────────────────────────────────────────────────── */
 
 export default function LogoSplash({
-  logoSrc = "/brand/logo/logo-512.png",
+  logoSrc = "/logo.PNG",
   enableSound = false,
   onComplete,
   children,
@@ -103,19 +103,20 @@ export default function LogoSplash({
             {/* Logo */}
             <motion.div
               className="ls-logo-wrap"
-              initial={{ opacity: 0, scale: 1.15 }}
+              initial={{ opacity: 0, scale: 1.08 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.88 }}
+              exit={{ opacity: 0, scale: 0.92 }}
               transition={{
                 opacity:  { duration: 0.9, ease: easeIn },
-                scale:    { duration: 1.6, ease: easeCine },
+                scale:    { duration: 1.4, ease: easeCine },
               }}
             >
               <Image
                 src={logoSrc}
                 alt="Scripts and Trips Delivery"
-                width={512}
-                height={512}
+                width={900}
+                height={900}
+                sizes="(max-width: 768px) 85vw, 70vw"
                 priority
                 draggable={false}
                 className="ls-logo-img"
@@ -174,12 +175,12 @@ const scopedCSS = /* css */ `
   pointer-events: none;
 }
 
-/* Logo wrapper — controls the sizing */
+/* Logo wrapper — controls the sizing (≈ 70 vw desktop) */
 .ls-logo-wrap {
   position: relative;
   z-index: 1;
-  width: 60vw;
-  max-width: 480px;
+  width: 70vw;
+  max-width: 900px;
   will-change: transform, opacity;
   display: flex;
   align-items: center;
@@ -197,14 +198,14 @@ const scopedCSS = /* css */ `
 /* ── Mobile ─────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .ls-logo-wrap {
-    width: 80vw;
-    max-width: 340px;
+    width: 85vw;
+    max-width: 420px;
   }
   .ls-glow {
-    width: 90vw;
-    height: 90vw;
-    max-width: 380px;
-    max-height: 380px;
+    width: 95vw;
+    height: 95vw;
+    max-width: 420px;
+    max-height: 420px;
     filter: blur(40px);
   }
 }
